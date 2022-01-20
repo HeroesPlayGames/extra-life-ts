@@ -1,0 +1,54 @@
+{
+  "name": "extra-life-ts",
+  "version": "0.0.0",
+  "description": "A typed wrapped for the Extra Life API",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HeroesPlayGames/extra-life-ts.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "prepare": "husky install",
+    "watch": "tsc -w",
+    "lint:staged": "pretty-quick --staged",
+    "prepublish": "tsup",
+    "build": "tsup"
+  },
+  "keywords": [
+    "extra-life",
+    "api",
+    "typescript"
+  ],
+  "author": "Marcelo Alves",
+  "license": "ISC",
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "printWidth": 120
+  },
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "dts": true,
+    "minify": true,
+    "splitting": false,
+    "sourcemap": true,
+    "clean": true
+  },
+  "dependencies": {
+    "cross-fetch": "^3.1.4",
+    "qss": "^2.0.3"
+  },
+  "devDependencies": {
+    "husky": "^7.0.4",
+    "prettier": "^2.5.1",
+    "pretty-quick": "^3.1.3",
+    "tsup": "^5.11.11",
+    "typescript": "^4.5.4"
+  }
+}
