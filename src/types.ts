@@ -18,7 +18,14 @@ export interface Options<T, IncludedFields extends keyof T | undefined = undefin
   where?: WhereArguments<IncludedFields>
 }
 
-export type ResourceTypes = 'activity' | 'badges' | 'donations' | 'donors' | 'incentives' | 'milestones'
+export type ResourceTypes =
+  | 'activity'
+  | 'badges'
+  | 'donations'
+  | 'donors'
+  | 'incentives'
+  | 'milestones'
+  | 'participants'
 export type ActivityType = 'donation' | 'participantBadge' | 'teamBadge'
 export interface Activity {
   amount?: number
@@ -54,6 +61,9 @@ export interface Participant {
   streamIsLive?: boolean
   sumDonations: number
   sumPledges: number
+}
+
+export interface TeamParticipant extends Participant {
   teamID: number
   teamName: string
 }
@@ -152,6 +162,10 @@ export type GetDonationsOptions = Options<Donation>
 export type GetDonorsOptions = Options<Donor>
 export type GetIncentivesOptions = Options<Incentive, Exclude<keyof Incentive, 'incentiveImageURL' | 'links'>>
 export type GetMilestonesOptions = Options<Milestone>
+export type GetTeamParticipantsOptions = Options<
+  TeamParticipant,
+  Exclude<keyof TeamParticipant, 'links' | 'teamName' | 'eventName'>
+>
 export type AllOptions =
   | GetActivityOptions
   | GetBadgesOptions
@@ -159,3 +173,4 @@ export type AllOptions =
   | GetDonorsOptions
   | GetIncentivesOptions
   | GetMilestonesOptions
+  | GetTeamParticipantsOptions

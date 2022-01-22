@@ -11,6 +11,8 @@ import type {
   GetBadgesOptions,
   GetDonationsOptions,
   GetDonorsOptions,
+  GetTeamParticipantsOptions,
+  TeamParticipant,
 } from './types'
 
 export const getTeam = async (teamID: string | number) =>
@@ -18,6 +20,16 @@ export const getTeam = async (teamID: string | number) =>
     createUrl({
       id: teamID,
       type: 'teams',
+    })
+  )
+
+export const getTeamParticipants = async (teamId: string | number, opts?: GetTeamParticipantsOptions) =>
+  await fetch<TeamParticipant[]>(
+    createUrl({
+      id: teamId,
+      type: 'teams',
+      resource: 'participants',
+      opts,
     })
   )
 
