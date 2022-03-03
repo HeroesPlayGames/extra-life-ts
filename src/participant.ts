@@ -36,7 +36,7 @@ export const getParticipantActivity = async (participantID: string | number, opt
     })
   )
 
-export const getParticipantBadges = async (participantID: string | number, opts?: GetBadgesOptions) => {
+export const getParticipantBadges = async (participantID: string | number, opts?: GetBadgesOptions) =>
   await fetch<Result<Badge[]>>(
     createUrl<GetBadgesOptions>({
       type: 'participants',
@@ -45,7 +45,6 @@ export const getParticipantBadges = async (participantID: string | number, opts?
       opts,
     })
   )
-}
 
 export const getParticipantDonations = async (participantID: string | number, opts?: GetDonationsOptions) =>
   await fetch<Result<Donation[]>>(
