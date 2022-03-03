@@ -19,7 +19,7 @@ import type {
 } from './types'
 
 export const getParticipant = async (participantID: string | number) =>
-  await fetch<Result<Participant>>(
+  await fetch<Participant>(
     createUrl({
       type: 'participants',
       id: participantID,
@@ -27,7 +27,7 @@ export const getParticipant = async (participantID: string | number) =>
   )
 
 export const getParticipantActivity = async (participantID: string | number, opts?: GetActivityOptions) =>
-  await fetch<Result<Activity[]>>(
+  await fetch<Activity[]>(
     createUrl<GetActivityOptions>({
       type: 'participants',
       id: participantID,
@@ -37,7 +37,7 @@ export const getParticipantActivity = async (participantID: string | number, opt
   )
 
 export const getParticipantBadges = async (participantID: string | number, opts?: GetBadgesOptions) =>
-  await fetch<Result<Badge[]>>(
+  await fetch<Badge[]>(
     createUrl<GetBadgesOptions>({
       type: 'participants',
       id: participantID,
@@ -47,7 +47,7 @@ export const getParticipantBadges = async (participantID: string | number, opts?
   )
 
 export const getParticipantDonations = async (participantID: string | number, opts?: GetDonationsOptions) =>
-  await fetch<Result<Donation[]>>(
+  await fetch<Donation[]>(
     createUrl<GetDonationsOptions>({
       type: 'participants',
       id: participantID,
@@ -57,7 +57,7 @@ export const getParticipantDonations = async (participantID: string | number, op
   )
 
 export const getParticipantDonors = async (participantID: string | number, opts?: GetDonorsOptions) =>
-  await fetch<Result<Donor[]>>(
+  await fetch<Donor[]>(
     createUrl<GetDonorsOptions>({
       type: 'participants',
       id: participantID,
@@ -67,7 +67,7 @@ export const getParticipantDonors = async (participantID: string | number, opts?
   )
 
 export const getParticipantIncentives = async (participantID: string | number, opts?: GetIncentivesOptions) =>
-  await fetch<Result<Incentive[]>>(
+  await fetch<Incentive[]>(
     createUrl<GetIncentivesOptions>({
       type: 'participants',
       id: participantID,
@@ -77,7 +77,7 @@ export const getParticipantIncentives = async (participantID: string | number, o
   )
 
 export const getParticipantMilestones = async (participantID: string | number, opts?: GetMilestonesOptions) =>
-  await fetch<Result<Milestone[]>>(
+  await fetch<Milestone[]>(
     createUrl<GetMilestonesOptions>({
       type: 'participants',
       id: participantID,

@@ -34,7 +34,7 @@ export const getTeamParticipants = async (teamId: string | number, opts?: GetTea
   )
 
 export const getTeamActivity = async (teamID: string | number, opts?: GetActivityOptions) =>
-  await fetch<Result<Activity[]>>(
+  await fetch<Activity[]>(
     createUrl<GetActivityOptions>({
       id: teamID,
       type: 'teams',
@@ -44,7 +44,7 @@ export const getTeamActivity = async (teamID: string | number, opts?: GetActivit
   )
 
 export const getTeamBadges = async (teamID: string | number, opts?: GetBadgesOptions) =>
-  await fetch<Result<Badge[]>>(
+  await fetch<Badge[]>(
     createUrl<GetBadgesOptions>({
       id: teamID,
       type: 'teams',
@@ -54,7 +54,7 @@ export const getTeamBadges = async (teamID: string | number, opts?: GetBadgesOpt
   )
 
 export const getTeamDonations = async (teamID: string | number, opts?: GetDonationsOptions) =>
-  await fetch<Result<Donation[]>>(
+  await fetch<Donation[]>(
     createUrl<GetDonationsOptions>({
       id: teamID,
       type: 'teams',
@@ -64,7 +64,7 @@ export const getTeamDonations = async (teamID: string | number, opts?: GetDonati
   )
 
 export const getTeamDonors = async (teamID: string | number, opts?: GetDonorsOptions) =>
-  await fetch<Result<Donor[]>>(
+  await fetch<Donor[]>(
     createUrl<GetDonorsOptions>({
       id: teamID,
       type: 'teams',
