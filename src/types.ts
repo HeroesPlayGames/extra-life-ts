@@ -44,8 +44,10 @@ export interface Participant {
   eventID: number
   eventName: string
   fundraisingGoal: number
+  hasActivityTracking: boolean
   isCustomAvatarImage: boolean
-  isTeamCaptain: boolean
+  isTeamCaptain?: boolean
+  isTeamCoCaptain?: boolean
   links: {
     donate: string
     page: string
@@ -55,15 +57,27 @@ export interface Participant {
   numIncentives: number
   numMilestones: number
   participantID: number
+  /**
+   * So far the strings I've found here are:
+   * A = CoCaptain
+   * C = Captain
+   * I = Individual
+   * T = Team
+   */
+  role: string
   streamingChannel?: string
   streamingPlatform?: string
   streamIsEnabled?: boolean
   streamIsLive?: boolean
   sumDonations: number
   sumPledges: number
+  teamID?: number
+  teamName?: string
 }
 
 export interface TeamParticipant extends Participant {
+  isTeamCaptain: boolean
+  isTeamCoCaptain: boolean
   teamID: number
   teamName: string
 }
