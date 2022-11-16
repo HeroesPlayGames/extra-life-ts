@@ -1,7 +1,7 @@
 {
   "name": "extra-life-ts",
   "version": "0.3.0",
-  "description": "A typed wrapped for the Extra Life API",
+  "description": "A typed wrapper for the Extra Life API",
   "repository": {
     "type": "git",
     "url": "https://github.com/HeroesPlayGames/extra-life-ts.git"
