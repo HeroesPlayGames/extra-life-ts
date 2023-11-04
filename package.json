@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "prepare": "husky install",
-    "watch": "tsc -w",
+    "dev": "tsup --watch",
     "lint:staged": "pretty-quick --staged",
     "prepublish": "tsup",
     "build": "tsup"

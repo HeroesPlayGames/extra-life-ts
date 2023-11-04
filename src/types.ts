@@ -52,11 +52,13 @@ export interface Participant {
     donate: string
     page: string
     stream?: string
+    facebookFundraiser?: string
   }
   numDonations: number
   numIncentives: number
   numMilestones: number
   participantID: number
+  participantTypeCode: string
   /**
    * So far the strings I've found here are:
    * A = CoCaptain
@@ -96,6 +98,7 @@ export interface Donor {
   donorID: number
   modifiedDateUTC: string
   numDonations: number
+  recipientImageURL: string
   sumDonations: number
 }
 
@@ -107,11 +110,13 @@ export interface Donation {
   donationID: string
   donorID: string
   eventID: number
+  isRegFee: boolean
   links: {
     recipient: string
   }
   participantID: number
   recipientName: string
+  recipientImageURL: string
   teamID: number
 }
 
@@ -152,6 +157,7 @@ export interface Team {
   eventID: number
   eventName: string
   fundraisingGoal: number
+  hasActivityTracking: boolean
   hasTeamOnlyDonations: boolean
   isCustomAvatarImage: boolean
   links: {
@@ -161,6 +167,7 @@ export interface Team {
   name: string
   numDonations: number
   numParticipants: number
+  sourceTeamID: number
   streamingChannel: string
   streamingPlatform: string
   streamIsEnabled: boolean
